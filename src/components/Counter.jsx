@@ -16,12 +16,20 @@ const Counter = () => {
 
   return (
     <div className="d-flex justify-content-center align-items-center gap-5">
-      <button onClick={() => setCount(count - 1)} className="btn btn-danger">
+      <button
+        disabled={count === 0}
+        onClick={() => setCount(count - 1)}
+        className="btn btn-danger"
+      >
         Azalt
       </button>
       <p className="lead fs-1">{count}</p>
       <button onClick={() => setCount(count + 1)} className="btn btn-success">
         Arttır
+      </button>
+
+      <button className="btn btn-primary" onClick={() => setCount(0)}>
+        SIFIRLA
       </button>
     </div>
   );
